@@ -33,6 +33,10 @@ export default function Home({ result }: UserResults) {
 
   const isMobile = useBreakpointValue({ base: true, lg: false });
 
+  if(!result) {
+    return <LoginComponent />
+  }
+
   return (
     <>
       { !session ? <LoginComponent /> :
