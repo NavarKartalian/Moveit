@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 import { getSession, useSession } from "next-auth/react";
+import Head from 'next/head';
 
 import { LoginComponent } from "../../components/LoginComponent";
 import { SideNav } from "../../components/SideNav";
@@ -50,6 +51,10 @@ export default function Leaderboard({ result }: UserResults) {
   
   return (
     <>
+      <Head>
+        <title>Moveit | Leaderboard</title>
+      </Head>
+      
       { !session ? <LoginComponent /> :
         <Flex w='100%' direction={{'base': 'column', 'lg': 'row'}}>
           <SideNav />
