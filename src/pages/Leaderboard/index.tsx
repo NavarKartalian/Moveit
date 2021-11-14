@@ -43,7 +43,6 @@ export default function Leaderboard({ result }: UserResults) {
   const { colorMode } = useColorMode();
   const bg = useColorModeValue('white', 'hsl(207, 26%, 17%)');
   const color = useColorModeValue('#666666', 'white');
-  const isMobile = useBreakpointValue({ base: true, lg: false });
 
   if(!result) {
     return <LoginComponent />
