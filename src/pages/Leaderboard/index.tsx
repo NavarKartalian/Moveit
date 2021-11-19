@@ -11,8 +11,7 @@ import {
   Text, 
   Image,
   useColorMode,
-  useColorModeValue,
-  useBreakpointValue
+  useColorModeValue
 } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 import { getSession, useSession } from "next-auth/react";

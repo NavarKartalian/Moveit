@@ -1,7 +1,6 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Profile } from '.';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
-import { CountdownContext } from '../../contexts/CountdownContext';
 
 describe('Profile', () => {
   it('Renders correctly', () => {
@@ -32,11 +31,12 @@ describe('Profile', () => {
       </ChallengesContext.Provider>
     );
 
-    expect(screen.getByText(result.name)).toBeInTheDocument()
-    expect(screen.getByText(`Level ${result.level} |`)).toBeInTheDocument()
-    expect(screen.getByText(`${result.curExp} xp`)).toBeInTheDocument()
-    expect(screen.getByText('Desafios completados')).toBeInTheDocument()
-    expect(screen.getByText(result.completedChallenges)).toBeInTheDocument()
+    expect(screen.getByText(result.name)).toBeInTheDocument();
+    expect(screen.getByAltText('Arrow up')).toBeInTheDocument();
+    expect(screen.getByText(`Level ${result.level} |`)).toBeInTheDocument();
+    expect(screen.getByText(`${result.curExp} xp`)).toBeInTheDocument();
+    expect(screen.getByText('Desafios completados')).toBeInTheDocument();
+    expect(screen.getByText(result.completedChallenges)).toBeInTheDocument();
   });
 });
 

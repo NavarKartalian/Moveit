@@ -25,6 +25,7 @@ describe('ExperienceBar', () => {
     );
 
     expect(screen.getByText('0 xp')).toBeInTheDocument()
+    expect(screen.getByRole('progressbar')).toBeInTheDocument();
     expect(screen.getByText(`${experienceToNextLevel} xp`)).toBeInTheDocument()
   });
 })

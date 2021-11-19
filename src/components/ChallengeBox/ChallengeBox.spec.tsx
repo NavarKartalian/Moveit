@@ -23,6 +23,7 @@ describe('ChallengeBox', () => {
       </ChallengesContext.Provider>
     );
 
+    expect(screen.getByAltText('Arrow up')).toBeInTheDocument();
     expect(screen.getByText('Avance de level completando os desafios.')).toBeInTheDocument()
   });
 
@@ -46,6 +47,8 @@ describe('ChallengeBox', () => {
     );
 
     expect(screen.getByText(`Ganhe ${1} xp`)).toBeInTheDocument();
+    expect(screen.getByAltText('Arrow up')).toBeInTheDocument();
+    expect(screen.getByText('Novo desafio')).toBeInTheDocument();
     expect(screen.getByText('fake description')).toBeInTheDocument();
     expect(screen.getByText('Falhei')).toBeInTheDocument();
     expect(screen.getByText('Completei')).toBeInTheDocument();
