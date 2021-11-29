@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { getSession, useSession } from "next-auth/react";
 import { Flex, useBreakpointValue } from '@chakra-ui/react';
@@ -83,9 +83,9 @@ export default function Home({ result }: UserResults) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
-    const session = await getSession({ req });
+    const session = await getSession();
     const id = session.userId
     
     if(session) {

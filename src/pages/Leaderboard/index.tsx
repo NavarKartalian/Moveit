@@ -13,7 +13,7 @@ import {
   useColorMode,
   useColorModeValue
 } from "@chakra-ui/react";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import { getSession, useSession } from "next-auth/react";
 import Head from 'next/head';
 
@@ -132,9 +132,9 @@ export default function Leaderboard({ result }: UserResults) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
-    const session = await getSession({ req });
+    const session = await getSession();
     
     if(session) {
       const response = await api.get('getAllUsers', { params: { key: process.env.API_KEY } });
