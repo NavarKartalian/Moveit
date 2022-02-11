@@ -11,6 +11,7 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
+  secret: process.env.JWT_SECRET,
   callbacks: {
     async signIn({ user }) {
       const { id, name, image } = user;
